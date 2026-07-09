@@ -278,6 +278,12 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .usage-section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
   .indications-grid {
     grid-template-columns: 1fr;
   }

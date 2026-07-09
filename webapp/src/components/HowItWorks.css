@@ -239,6 +239,12 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .how-section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
   .how-content {
     flex-direction: column;
     height: auto;

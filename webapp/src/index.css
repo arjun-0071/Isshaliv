@@ -52,10 +52,17 @@ button {
 
 @media (max-width: 1024px) {
   html, body {
-    overflow-y: visible !important;
+    overflow-y: auto !important;
     overflow-x: hidden !important;
     min-height: 100vh !important;
     height: auto !important;
-    position: relative;
+    position: static !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root {
+    height: auto !important;
+    min-height: 100vh;
+    overflow: visible !important;
   }
 }

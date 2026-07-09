@@ -177,6 +177,11 @@
 }
 
 @media (max-width: 968px) {
+  .hero {
+    overflow: visible;
+    min-height: auto;
+  }
+
   .hero-content {
     flex-direction: column;
     text-align: center;

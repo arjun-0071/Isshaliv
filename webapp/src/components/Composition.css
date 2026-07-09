@@ -235,6 +235,12 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .comp-section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
   .comp-card {
     flex-direction: column;
     height: auto;

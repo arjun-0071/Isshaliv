@@ -154,6 +154,12 @@
 }
 
 @media (max-width: 968px) {
+  .why-section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
   .carousel-card-wrapper {
     /* Shrink the radius on mobile */
     transform-origin: center center;
