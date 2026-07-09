@@ -1,0 +1,33 @@
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sections-container {
+  height: 100vh;
+  width: 100vw;
+  transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  will-change: transform;
+}
+
+.sections-container.native-scroll {
+  height: auto;
+  transition: none;
+}
+
+.section-wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    overflow: visible;
+  }
+}

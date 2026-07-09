@@ -1,0 +1,305 @@
+.usage-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  padding-top: 5rem;
+  overflow: hidden;
+  align-items: center;
+}
+
+.usage-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.usage-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--text-secondary);
+}
+
+/* Sub Navbar */
+.usage-nav {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  padding: 0.4rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.usage-tab-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 40px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.usage-tab-btn:hover {
+  background: #fdfaf5;
+}
+
+.usage-tab-btn.active {
+  background: var(--accent-orange);
+  color: white;
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
+}
+
+/* Content Area */
+.usage-content-wrapper {
+  width: 100%;
+  max-width: 1150px;
+  height: calc(100vh - 300px);
+  padding: 0 2rem;
+}
+
+.usage-content-card {
+  width: 100%;
+  height: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(74, 48, 40, 0.08);
+  border-left: 8px solid var(--text-secondary);
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Animations */
+.slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Tab 0: Indications --- */
+.indications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.indication-card {
+  background: #fdfaf5;
+  border: 1px solid rgba(74, 48, 40, 0.05);
+  border-radius: 16px;
+  padding: 1.8rem;
+  display: flex;
+  gap: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.indication-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.15);
+  border-color: #c2410c;
+  background: rgba(234, 88, 12, 0.05);
+}
+
+.ind-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(234, 88, 12, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.ind-icon-svg {
+  color: var(--accent-orange);
+  transition: all 0.3s ease;
+}
+
+.indication-card:hover .ind-icon-wrapper {
+  background: #c2410c;
+}
+
+.indication-card:hover .ind-icon-svg {
+  color: white;
+  transform: scale(1.1);
+}
+
+.ind-title {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.ind-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* --- Tab 1: Dosage & Administration --- */
+.dosage-heading {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.dosage-box {
+  background: #fdfaf5;
+  border: 1px solid rgba(101, 163, 13, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dosage-amount {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.method-step-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 48, 40, 0.08);
+  border-radius: 12px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.method-step-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(234, 179, 8, 0.15);
+  border-color: rgba(74, 48, 40, 0.4);
+  background: rgba(234, 179, 8, 0.08);
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(234, 88, 12, 0.1);
+  color: var(--accent-orange);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.method-step-card:hover .step-num {
+  background: var(--text-secondary);
+  color: white;
+}
+
+.step-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* --- Tab 2: Safety & Precautions --- */
+.safety-section {
+  margin-bottom: 1.2rem;
+}
+
+.safety-label {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.safety-text {
+  font-size: 15px; /* Increased by 1px from 0.85rem (13.6px) */
+  color: #555;
+  line-height: 1.6;
+}
+
+.safety-alert {
+  margin-top: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.yellow-alert {
+  background-color: #fffbeb;
+  border-left: 6px solid #f59e0b;
+}
+
+.yellow-alert:hover {
+  background-color: #fef3c7;
+}
+
+.yellow-alert .safety-label {
+  color: #b45309;
+}
+
+.red-alert {
+  background-color: #fef2f2;
+  border-left: 6px solid #ef4444;
+}
+
+.red-alert:hover {
+  background-color: #fee2e2;
+}
+
+.red-alert .safety-label {
+  color: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .indications-grid {
+    grid-template-columns: 1fr;
+  }
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+  .usage-content-card {
+    padding: 2rem;
+  }
+  .usage-nav {
+    flex-direction: column;
+    width: 90%;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .usage-section { padding: 5rem 5% 3rem; min-height: auto; }
+  .usage-title { font-size: 2.5rem; }
+  .usage-tabs { flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+  .indications-grid { grid-template-columns: 1fr; }
+  .dosage-content { flex-direction: column; }
+  .dosage-text-block { max-width: 100%; }
+}

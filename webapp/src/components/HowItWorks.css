@@ -1,0 +1,267 @@
+.how-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  padding-top: 5rem;
+  overflow: hidden;
+  align-items: center;
+}
+
+.how-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  z-index: 10;
+}
+
+.how-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.how-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100vh - 200px);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+/* --- Left Side: Diagram --- */
+.diagram-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diagram-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.connection-line {
+  stroke: rgba(74, 48, 40, 0.15);
+  stroke-width: 2;
+  transition: all 0.5s ease;
+  stroke-dasharray: 5, 5;
+}
+
+.connection-line.active {
+  stroke: var(--accent-orange);
+  stroke-width: 4;
+  stroke-dasharray: none;
+  filter: drop-shadow(0 0 8px rgba(234, 88, 12, 0.6));
+}
+
+.connection-line.hovered {
+  stroke: #ca8a04;
+  stroke-width: 3;
+}
+
+.center-hub {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #4a3028, #2a1b16);
+  border-radius: 50%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(74, 48, 40, 0.3);
+  border: 4px solid #fff;
+}
+
+.center-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  z-index: -1;
+  opacity: 0.6;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.center-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  opacity: 0; /* Hidden for now, relying on the elegant CSS core */
+}
+
+/* Orbiting Nodes */
+.diagram-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 120px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.node-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(74, 48, 40, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4a3028;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.node-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  background: rgba(253, 250, 245, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Active State for Nodes */
+.diagram-node:hover {
+  transform: translate(-50%, -50%) scale(1.1) !important;
+}
+
+.diagram-node.active .node-icon-wrapper {
+  background: var(--accent-orange);
+  color: white;
+  border-color: var(--accent-orange);
+  transform: scale(1.2);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.4);
+}
+
+.diagram-node.active .node-label {
+  color: var(--accent-orange);
+  font-weight: 700;
+}
+
+.diagram-node.hovered .node-icon-wrapper {
+  background: rgba(250, 204, 21, 0.15);
+  color: #ca8a04;
+  border-color: #ca8a04;
+  transform: scale(1.1);
+}
+
+.diagram-node.hovered .node-label {
+  color: #ca8a04;
+}
+
+/* --- Right Side: Reading Pane --- */
+.reading-pane {
+  flex: 1;
+  max-width: 450px;
+  margin-left: 4rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(74, 48, 40, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.reading-pane::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent-orange), #ffedd5);
+}
+
+.reading-content {
+  animation: slideFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reading-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: #ffedd5;
+  color: var(--accent-orange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.reading-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.reading-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .how-content {
+    flex-direction: column;
+    height: auto;
+    gap: 3rem;
+  }
+  .reading-pane {
+    margin-left: 0;
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .diagram-container {
+    transform: scale(0.6);
+    margin-bottom: -100px;
+    margin-top: -50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-section { padding: 5rem 5% 3rem; min-height: auto; }
+  .how-content { flex-direction: column; gap: 3rem; text-align: center; }
+  .how-text-block { max-width: 100%; align-items: center; }
+  .sci-points { align-items: center; }
+}

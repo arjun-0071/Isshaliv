@@ -1,0 +1,138 @@
+.about-section {
+  padding: 7rem 5% 3rem;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.about-header {
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+.about-overtitle {
+  color: var(--accent-orange);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.about-title .highlight-orange {
+  color: var(--accent-orange);
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 auto;
+}
+
+.about-cards {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+}
+
+.about-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(234, 88, 12, 0.15);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(74, 48, 40, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.12);
+  border-color: rgba(234, 88, 12, 0.3);
+}
+
+.card-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.card-icon-wrapper svg {
+  transition: stroke 0.3s ease;
+}
+
+.orange-bg { background-color: #ffedd5; }
+.orange-bg svg { stroke: #ea580c; }
+.about-card:hover .orange-bg { background-color: #ea580c; }
+.about-card:hover .orange-bg svg { stroke: #ffffff; }
+
+.yellow-bg { background-color: #fef08a; }
+.yellow-bg svg { stroke: #ca8a04; }
+.about-card:hover .yellow-bg { background-color: #ca8a04; }
+.about-card:hover .yellow-bg svg { stroke: #ffffff; }
+
+.red-bg { background-color: #fee2e2; }
+.red-bg svg { stroke: #dc2626; }
+.about-card:hover .red-bg { background-color: #dc2626; }
+.about-card:hover .red-bg svg { stroke: #ffffff; }
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 968px) {
+  .about-cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section { padding: 5rem 5% 3rem; min-height: auto; }
+  .about-title { font-size: 2.5rem; }
+  .about-content { flex-direction: column; }
+  .side-images { display: none; }
+  .about-text { max-width: 100%; text-align: center; }
+}
