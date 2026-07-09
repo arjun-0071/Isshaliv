@@ -39,6 +39,17 @@ function App() {
     setCurrentSection(0);
   };
 
+  const handleLearnMore = () => {
+    if (isMobile) {
+      const sections = document.querySelectorAll('.section-wrapper');
+      if (sections[1]) {
+        sections[1].scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      setCurrentSection(1);
+    }
+  };
+
   const handleScroll = (direction) => {
     if (isScrolling.current) return;
     
@@ -103,7 +114,7 @@ function App() {
         style={isMobile ? {} : { transform: `translateY(-${currentSection * 100}vh)` }}
       >
         <div className="section-wrapper">
-          <Hero lang={lang} />
+          <Hero lang={lang} onLearnMore={handleLearnMore} />
         </div>
         <div className="section-wrapper">
           <About lang={lang} />

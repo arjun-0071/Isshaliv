@@ -24,6 +24,11 @@
 }
 
 @media (max-width: 768px) {
+  .app-container {
+    height: auto;
+    overflow: visible;
+  }
+  
   .section-wrapper {
     height: auto;
     min-height: 100vh;

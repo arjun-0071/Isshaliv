@@ -4,7 +4,7 @@ import heroImage from '../assets/hero_section_image.png';
 import { Activity, Leaf, ShieldCheck, ArrowRight } from 'lucide-react';
 import { translations } from '../translations';
 
-const Hero = ({ lang }) => {
+const Hero = ({ lang, onLearnMore }) => {
   const t = translations[lang].hero;
 
   return (
@@ -39,7 +39,7 @@ const Hero = ({ lang }) => {
             </div>
           </div>
 
-          <button className="btn-learn-more">
+          <button className="btn-learn-more" onClick={onLearnMore}>
             {t.learnMore} <ArrowRight className="arrow" size={20} />
           </button>
         </div>
