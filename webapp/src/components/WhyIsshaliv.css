@@ -177,4 +177,18 @@
   .why-title { font-size: 2.5rem; }
   .steps-container { flex-direction: column; gap: 2rem; align-items: center; }
   .connection-arrow { display: none; }
+  
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+    top: auto;
+    bottom: 10px;
+    transform: none;
+  }
+  .left-btn {
+    left: 20%;
+  }
+  .right-btn {
+    right: 20%;
+  }
 }
