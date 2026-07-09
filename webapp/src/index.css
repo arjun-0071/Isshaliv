@@ -50,9 +50,12 @@ button {
   font-family: inherit;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html, body {
-    overflow: auto;
-    height: auto;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    position: relative;
   }
 }

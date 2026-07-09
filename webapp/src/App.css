@@ -23,16 +23,22 @@
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .app-container {
-    height: auto;
-    overflow: visible;
+    height: auto !important;
+    overflow: visible !important;
   }
   
+  .sections-container {
+    height: auto !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
   .section-wrapper {
-    height: auto;
-    min-height: 100vh;
-    width: 100%;
-    overflow: visible;
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    overflow: visible !important;
   }
 }
